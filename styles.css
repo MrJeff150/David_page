@@ -38,7 +38,7 @@ nav ul li a:hover {
     color: black; /* Al pasar el raton por encima cambia el color */
 }
 
-/* Sección para la foto */
+/* Sección para la foto del inicio */
 .entrada-visual-inicio {
     background-image: url('imagenes/inicio-fondo.jpg'); /* La imágen */
     background-size: cover; /* Cubrir el ancho con la foto */
@@ -47,7 +47,7 @@ nav ul li a:hover {
     height: 300px;
 }
 
-/* Sección para la foto de menus */
+/* Sección para la foto del menu */
 .entrada-visual-menu {
     background-image: url('imagenes/menu-fondo.jpg'); /* La foto de menu */
     background-size: cover;
