@@ -1,0 +1,95 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a1a; /* Fondo oscuro */
+    color: white; /* Texto blanco */
+}
+
+header {
+    text-align: left; /* Encabezado alineado a la izquierda */
+    padding: 20px;
+    background-color: red; /* Color principal rojo */
+}
+
+h1 {
+    margin: 0;
+    color: white; /* Texto blanco */
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white; /* Enlaces en blanco */
+    text-decoration: none;
+    font-size: 18px;
+}
+
+nav ul li a:hover {
+    color: black; /* Al pasar el ratón, cambia a negro */
+}
+
+/* Sección visual para la página de inicio */
+.entrada-visual-inicio {
+    background-image: url('imagenes/inicio-fondo.jpg'); /* Cambia 'inicio-fondo.jpg' por el nombre de tu imagen */
+    background-size: cover; /* Cubrir el ancho */
+    background-position: center; /* Centrar la imagen */
+    width: 100%; /* Ancho completo */
+    height: 300px; /* Altura reducida */
+}
+
+/* Sección visual para la página de menús */
+.entrada-visual-menu {
+    background-image: url('imagenes/menu-fondo.jpg'); /* Cambia 'menu-fondo.jpg' por el nombre de tu imagen */
+    background-size: cover; /* Cubrir el ancho */
+    background-position: center; /* Centrar la imagen */
+    width: 100%; /* Ancho completo */
+    height: 300px; /* Altura reducida */
+}
+
+main {
+    padding: 20px;
+    text-align: left; /* Texto alineado a la izquierda */
+}
+
+p {
+    font-size: 1.1rem;
+}
+
+/* Estilo de la tabla */
+table {
+    width: 100%; /* Ajusta la tabla al 100% del ancho */
+    margin: 20px 0;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid white; /* Bordes blancos */
+    color: white;
+}
+
+th {
+    background-color: red; /* Color rojo para los encabezados */
+    font-weight: bold;
+}
+
+td {
+    background-color: #333; /* Fondo oscuro para las celdas */
+}
+
+img {
+    width: 100px; /* Ajustar tamaño de las imágenes */
+    height: auto;
+    border-radius: 5px;
+}
