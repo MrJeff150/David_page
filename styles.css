@@ -2,19 +2,19 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #1a1a1a; /* Fondo oscuro */
-    color: white; /* Texto blanco */
+    background-color: #1a1a1a;
+    color: white; 
 }
 
 header {
-    text-align: left; /* Encabezado a la izquierda */
+    text-align: left; 
     padding: 20px;
-    background-color: red; /* Color principal rojo */
+    background-color: red; 
 }
 
 h1 {
     margin: 0;
-    color: white; /* Texto blanco */
+    color: white;
 }
 
 nav ul {
@@ -29,7 +29,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: white; /* Enlaces en color blanco */
+    color: white;
     text-decoration: none;
     font-size: 18px;
 }
@@ -41,19 +41,19 @@ nav ul li a:hover {
 /* Sección para la foto */
 .entrada-visual-inicio {
     background-image: url('imagenes/inicio-fondo.jpg'); /* La imágen */
-    background-size: cover; /* Ancho para la foto */
-    background-position: center; /* Centrar la imagen */
-    width: 100%; /* Ancho completo */
-    height: 300px; /* Altura reducida */
+    background-size: cover; /* Cubrir el ancho con la foto */
+    background-position: center;
+    width: 100%; 
+    height: 300px;
 }
 
 /* Sección para la foto de menus */
 .entrada-visual-menu {
     background-image: url('imagenes/menu-fondo.jpg'); /* La foto de menu */
-    background-size: cover; /* Cubrir el ancho */
-    background-position: center; /* Centrar la imagen */
-    width: 100%; /* Ancho completo */
-    height: 300px; /* Altura reducida */
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 300px; 
 }
 
 main {
@@ -67,7 +67,7 @@ p {
 
 /* TABLA */
 table {
-    width: 100%; /* Cubrir ancho con la tabla */
+    width: 100%; 
     margin: 20px 0;
     border-collapse: collapse;
 }
@@ -80,16 +80,16 @@ th, td {
 }
 
 th {
-    background-color: red; /* El color de los encabezados */
+    background-color: red;
     font-weight: bold;
 }
 
 td {
-    background-color: #333; /* Fondo oscuro para las celdas */
+    background-color: #333;
 }
 
 img {
-    width: 100px; /* Ajustar tamaño de las imágenes */
+    width: 100px;
     height: auto;
     border-radius: 5px;
 }
