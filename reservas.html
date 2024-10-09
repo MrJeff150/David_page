@@ -1,42 +1,86 @@
 <!DOCTYPE html>
-<html lang="es">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Reservas - Restaurante Gourmet</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        /* Estilo para el botón de imagen */
+        .imagen-boton {
+            width: 100px; 
+            height: 100px; 
+            border: none; 
+            background-color: transparent; 
+            cursor: pointer; 
+            vertical-align: middle; 
+        }
+
+        .formulario-container {
+            display: flex; 
+            align-items: center; 
+        }
+
+        .formulario-container textarea {
+            margin-right: 10px; /* Espacio entre el textarea y el botón */
+        }
+    </style>
 </head>
 <body>
     <header>
         <h1>Restaurante Gourmet</h1>
         <nav>
             <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="reservas.html">Reservas</a></li>
-                <li><a href="menus.html">Menús</a></li>
+                <li><a href="index.xhtml">Inicio</a></li>
+                <li><a href="reservas.xhtml">Reservas</a></li>
+                <li><a href="menus.xhtml">Menús</a></li>
             </ul>
         </nav>
     </header>
 
+    <!-- FORMULARIO -->
     <main>
         <h2>Reservas</h2>
         <form action="#" method="post">
             <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" required>
+            <input type="text" id="nombre" name="nombre" required="required" />
 
             <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
+            <input type="email" id="email" name="email" required="required" />
 
             <label for="fecha">Fecha:</label>
-            <input type="date" id="fecha" name="fecha" required>
+            <input type="date" id="fecha" name="fecha" required="required" />
 
             <label for="hora">Hora:</label>
-            <input type="time" id="hora" name="hora" required>
+            <input type="time" id="hora" name="hora" required="required" />
 
             <label for="personas">Número de personas:</label>
-            <input type="number" id="personas" name="personas" min="1" required>
+            <input type="number" id="personas" name="personas" min="1" required="required" />
 
-            <input type="submit" value="Reservar">
+            <!-- Apartado para selección de tipo de mesa -->
+            <div class="seleccion-mesa">
+                <h3>Seleccione el tipo de mesa:</h3>
+                <label>
+                    <input type="radio" name="tipo_mesa" value="individual" required="required" />
+                    Mesa individual (1 persona)
+                </label><br />
+                <label>
+                    <input type="radio" name="tipo_mesa" value="cuatro" />
+                    Mesa para 4 personas
+                </label><br />
+                <label>
+                    <input type="radio" name="tipo_mesa" value="mas_de_cuatro" />
+                    Mesa para más de 4 personas
+                </label>
+            </div>
+
+            <!-- Caja de texto para alergias o información adicional -->
+            <div class="formulario-container"> <br />
+                <label for="info_adicional">Información sobre alergias o datos importantes:</label>
+                <textarea id="info_adicional" name="info_adicional" rows="4" cols="50" placeholder="Escribe aquí..."></textarea>
+                <!-- Botón para enviar el formulario como imagen -->
+                <input type="image" class="imagen-boton" src="imagenes/tick-verde.png" alt="Enviar Reservación" />
+            </div>
         </form>
     </main>
 </body>
