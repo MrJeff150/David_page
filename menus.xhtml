@@ -1,68 +1,144 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Menús - Restaurante Gourmet</title>
-    <link rel="stylesheet" href="styles.css" />
+    <style type="text/css">
+        /* Estilo del fondo oscuro */
+        body {
+            background-color: #1a1a1a;
+            color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Estilo para el encabezado */
+        .header {
+            background-color: red;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        /* Estilo para la imagen de menú */
+        .entrada-visual-menu img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+        }
+
+        /* Estilo para la navegación */
+        .nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .nav ul li {
+            margin: 0 15px;
+        }
+
+        .nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Estilo para el contenido principal */
+        .main {
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Estilo para la tabla */
+        table {
+            width: 100%;
+            margin: 20px 0;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid #f0f0f0;
+            color: #f0f0f0;
+            text-align: center;
+        }
+
+        th {
+            background-color: red;
+            font-weight: bold;
+        }
+
+        td {
+            background-color: #333;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Restaurante Gourmet</h1>
-        <nav>
+    <div class="header">
+        <h1>Restaurante Gourmet - Menús</h1>
+        <div class="nav">
             <ul>
                 <li><a href="index.xhtml">Inicio</a></li>
+                <li><a href="menus.xhtml">Menú</a></li>
                 <li><a href="reservas.xhtml">Reservas</a></li>
-                <li><a href="menus.xhtml">Menús</a></li>
             </ul>
-        </nav>
-    </header>
-
-    <!-- Sección imagen menu -->
-    <div class="entrada-visual-menu">
-        <!-- Imagen de fondo -->
+        </div>
     </div>
 
-    <main>
-        <h2>Nuestros Menús</h2>
-        <p>Aquí encontrarás los menús disponibles en nuestro restaurante.</p>
+    <!-- Imagen de menú -->
+    <div class="entrada-visual-menu">
+        <img src="imagenes/menu-fondo.jpg" alt="Foto del menú del restaurante" />
+    </div>
 
+    <div class="main">
+        <h2>Nuestros Menús</h2>
+        <p>Descubre la variedad de platos que tenemos para ofrecerte.</p>
+        
+        <!-- Tabla del menú -->
         <table>
             <tr>
+                <th>Foto</th>
                 <th>Nombre</th>
-                <th colspan="2">Plato</th>
                 <th>Descripción</th>
-                <th>Precio</th> <!-- Nueva columna de precios -->
+                <th>Precio</th>
             </tr>
             <tr>
-                <td rowspan="2">Ensalada César</td>
-                <td><img src="imagenes/plato1.jpg" alt="Plato 1" /></td>
-                <td>Ensalada Fresca</td>
-                <td rowspan="2">Una deliciosa combinación de lechugas frescas, aderezo césar y crutones.</td>
-                <td rowspan="2">$12.00</td> <!-- Precio de la ensalada -->
+                <td rowspan="2"><img src="imagenes/plato1.jpg" alt="Plato 1" width="80" height="80" /></td>
+                <td>Entrada Especial</td>
+                <td>Deliciosa entrada con ingredientes frescos.</td>
+                <td>$12</td>
             </tr>
             <tr>
-                <td colspan="2">Ingredientes frescos del huerto</td>
+                <td colspan="2">Ideal para compartir</td>
+                <td>$18</td>
             </tr>
             <tr>
-                <td>Pasta Carbonara</td>
-                <td><img src="imagenes/plato2.jpg" alt="Plato 2" /></td>
-                <td>Exquisita pasta</td>
-                <td>Salsa carbonara con panceta y un toque de queso parmesano.</td>
-                <td>$15.00</td> <!-- Precio de la pasta -->
+                <td><img src="imagenes/plato2.jpg" alt="Plato 2" width="80" height="80" /></td>
+                <td>Plato Principal</td>
+                <td>Pechuga de pollo a la parrilla con verduras.</td>
+                <td>$25</td>
             </tr>
             <tr>
-                <td rowspan="2">Paella</td>
-                <td><img src="imagenes/plato3.jpg" alt="Plato 3" /></td>
-                <td>Paella Tradicional</td>
-                <td rowspan="2">Arroz cocido con mariscos frescos, azafrán y verduras.</td>
-                <td rowspan="2">$20.00</td> <!-- Precio de la paella -->
+                <td><img src="imagenes/plato3.jpg" alt="Plato 3" width="80" height="80" /></td>
+                <td colspan="2">Especialidad del Chef</td>
+                <td>$30</td>
             </tr>
             <tr>
-                <td colspan="2">Especialidad de la casa</td>
+                <td rowspan="2"><img src="imagenes/plato4.jpg" alt="Plato 4" width="80" height="80" /></td>
+                <td>Postre del Día</td>
+                <td>Helado artesanal con frutas frescas.</td>
+                <td>$10</td>
+            </tr>
+            <tr>
+                <td colspan="3">Perfecto para cerrar la comida</td>
             </tr>
         </table>
-    </main>
+    </div>
 </body>
 </html>
