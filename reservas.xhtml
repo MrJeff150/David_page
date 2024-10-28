@@ -1,88 +1,158 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Reservas - Restaurante Gourmet</title>
-    <link rel="stylesheet" href="styles.css" />
-    <style>
+    <style type="text/css">
+        /* Estilo del fondo oscuro */
+        body {
+            background-color: #1a1a1a;
+            color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Estilo para el encabezado */
+        .header {
+            background-color: red;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        /* Estilo para la navegación */
+        .nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .nav ul li {
+            margin: 0 15px;
+        }
+
+        .nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Estilo para el contenido principal */
+        .main {
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Estilo para el formulario */
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #333;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"], select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+
+        textarea {
+            height: 100px;
+        }
+
         /* Estilo para el botón de imagen */
-        .imagen-boton {
-            width: 100px; 
-            height: 100px; 
-            border: none; 
-            background-color: transparent; 
-            cursor: pointer; 
-            vertical-align: middle; 
-        }
-
-        .formulario-container {
-            display: flex; 
-            align-items: center; 
-        }
-
-        .formulario-container textarea {
-            margin-right: 10px; /* Espacio entre el textarea y el botón */
+        .submit-image {
+            width: 100px;
+            height: auto;
+            cursor: pointer;
+            border: none;
+            display: block;
+            margin: 20px auto 0;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Restaurante Gourmet</h1>
-        <nav>
+    <div class="header">
+        <h1>Restaurante Gourmet - Reservas</h1>
+        <div class="nav">
             <ul>
                 <li><a href="index.xhtml">Inicio</a></li>
+                <li><a href="menus.xhtml">Menú</a></li>
                 <li><a href="reservas.xhtml">Reservas</a></li>
-                <li><a href="menus.xhtml">Menús</a></li>
             </ul>
-        </nav>
-    </header>
+        </div>
+    </div>
 
-    <!-- FORMULARIO -->
-    <main>
-        <h2>Reservas</h2>
+    <div class="main">
+        <h2>Formulario de Reservas</h2>
+        <p>Rellena los campos para completar tu reserva.</p>
+
+        <!-- Formulario de reservas -->
         <form action="#" method="post">
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" required="required" />
+            <!-- Sección 1: Información del cliente -->
+            <h3>Información del Cliente</h3>
+            <label for="nombre">Nombre Completo:</label>
+            <input type="text" id="nombre" name="nombre" />
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required="required" />
+            <label for="email">Correo Electrónico:</label>
+            <input type="text" id="email" name="email" />
 
-            <label for="fecha">Fecha:</label>
-            <input type="date" id="fecha" name="fecha" required="required" />
+            <label for="fecha">Fecha de la Reserva:</label>
+            <input type="text" id="fecha" name="fecha" />
 
-            <label for="hora">Hora:</label>
-            <input type="time" id="hora" name="hora" required="required" />
+            <label for="hora">Hora de la Reserva:</label>
+            <input type="text" id="hora" name="hora" />
 
-            <label for="personas">Número de personas:</label>
-            <input type="number" id="personas" name="personas" min="1" required="required" />
+            <!-- Sección 2: Selección de mesa -->
+            <h3>Selección de Mesa</h3>
+            <label for="tipo_mesa">Tipo de Mesa:</label>
+            <select id="tipo_mesa" name="tipo_mesa">
+                <option value="individual">Mesa Individual (1 persona)</option>
+                <option value="pareja">Mesa para Pareja (2 personas)</option>
+                <option value="familiar">Mesa Familiar (4 personas)</option>
+                <option value="grupo">Mesa para Grupo (más de 4 personas)</option>
+            </select>
 
-            <!-- Apartado para selección de tipo de mesa -->
-            <div class="seleccion-mesa">
-                <h3>Seleccione el tipo de mesa:</h3>
-                <label>
-                    <input type="radio" name="tipo_mesa" value="individual" required="required" />
-                    Mesa individual (1 persona)
-                </label><br />
-                <label>
-                    <input type="radio" name="tipo_mesa" value="cuatro" />
-                    Mesa para 4 personas
-                </label><br />
-                <label>
-                    <input type="radio" name="tipo_mesa" value="mas_de_cuatro" />
-                    Mesa para más de 4 personas
-                </label>
-            </div>
+            <!-- Sección 3: Opciones adicionales -->
+            <h3>Opciones Adicionales</h3>
+            <label><input type="checkbox" name="opciones" value="ventana" /> Cerca de la ventana</label><br />
+            <label><input type="checkbox" name="opciones" value="terraza" /> En la terraza</label><br />
+            <label><input type="checkbox" name="opciones" value="vista_mar" /> Con vista al mar</label>
 
-            <!-- Caja de texto para alergias o información adicional -->
-            <div class="formulario-container"> 
-                <label for="info_adicional">Información sobre alergias o datos importantes:</label>
-                <textarea id="info_adicional" name="info_adicional" rows="4" cols="50" placeholder="Escribe aquí..."></textarea>
-                <!-- Botón para enviar el formulario como imagen -->
-                <input type="image" class="imagen-boton" src="imagenes/tick-verde.png" alt="Enviar Reservación" />
-            </div>
+            <!-- Sección 4: Información adicional -->
+            <h3>Información Adicional</h3>
+            <label for="info_adicional">Alergias u otra información importante:</label>
+            <textarea id="info_adicional" name="info_adicional" rows="5" cols="50"></textarea>
+
+            <!-- Imagen como botón de envío -->
+            <input type="image" src="imagenes/tick-verde.png" alt="Enviar Reserva" class="submit-image" />
         </form>
-    </main>
+    </div>
+
+    <p>
+        <a href="https://validator.w3.org/markup/check?uri=referer"><img
+          src="https://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Transitional" height="31" width="88" /></a>
+      </p>
+      
 </body>
 </html>
