@@ -6,6 +6,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Restaurante Gourmet</title>
     <link rel="shortcut icon" href="imagenes/favicon-16x16.png" type="image/png" />
+
+    <script>
+document.addEventListener("DOMContentLoaded", function() {
+    const formulario = document.querySelector("form");
+    const colorDisplay = document.getElementById("color_display");
+
+    formulario.addEventListener("submit", function(event) {
+        event.preventDefault(); // Evita el envío del formulario por defecto
+
+        let errores = [];
+        
+        // Validar Monto del Pago
+        let montoPago = document.getElementById("numero_pago").value;
+        if (montoPago <= 0) {
+            errores.push("El monto del pago debe ser mayor a 0.");
+        }
+
+        // Validar Método de Pago
+        let metodoPago = document.getElementById("metodo_pago").value;
+        if (!metodoPago) {
+            errores.push("Debe seleccionar un método de pago.");
+        }
+
+        // Validar Fecha y Hora de Pago
+        let fechaPago = document.getElementById("fecha_pago").value;
+        let horaPago = document.getElementById("hora_pago").value;
+        if (!fechaPago || !horaPago) {
+            errores.push("Debe seleccionar una fecha y hora de pago.");
+        }
+
+        // Validar URL de Transacción (si se proporciona)
+        let urlPago = document.getElementById("url_pago").value;
+        if (urlPago && !/^https?:\/\/.+/i.test(urlPago)) {
+            errores.push("La URL de la transacción debe ser válida.");
+        }
+
+        // Validar Teléfono
+        let telefono = document.getElementById("telefono").value;
+        if (!/^\d{9}$/.test(telefono)) {
+            errores.push("El teléfono debe tener 9 dígitos numéricos.");
+        }
+
+        // Validar Nombre Completo
+        let nombre = document.getElementById("nombre").value;
+        if (!/^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$/.test(nombre)) {
+            errores.push("El nombre solo puede contener letras y espacios.");
+        }
+
+        // Validar Plato
+        let plato = document.getElementById("plato").value.trim();
+        if (plato === "") {
+            errores.push("Debe ingresar un plato.");
+        }
+
+            alert("Formulario enviado con éxito.");
+            formulario.submit(); // Envía el formulario si no hay errores
+        }
+    });
+
+    // Cambia el color de fondo según la selección
+    document.getElementById("color_favorito").addEventListener("input", function() {
+        colorDisplay.style.backgroundColor = this.value;
+    });
+});
+</script>
+    
     <style type="text/css">
         /* Estilo del fondo oscuro */
         body {
