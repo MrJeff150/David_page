@@ -171,7 +171,36 @@ document.addEventListener("DOMContentLoaded", function() {
             border: 1px solid white;
             background-color: #ff0000;
         }
+        
+    /* Ajuste para evitar cortes en los labels */
+    .form-group {
+        margin-bottom: 15px;
+    }
 
+    .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    /* Asegurar que el input de rango y su label se vean correctamente */
+    .range-container {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        width: 100%;
+    }
+
+    .range-container input {
+        width: 100%;
+    }
+
+    /* Asegurar correcta alineación del checkbox y su label */
+    .checkbox-container {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
     </style>
 </head>
 <body>
@@ -241,12 +270,15 @@ document.addEventListener("DOMContentLoaded", function() {
                     <input type="color" id="color_favorito" name="color_favorito" value="#ff0000" oninput="document.getElementById('color_display').style.backgroundColor = this.value">
                  <div id="color_display" class="color-display"> </div>
             
-            <label for="valor_escala">Escala de Preferencia:</label>
-            <input type="range" id="valor_escala" name="valor_escala" min="0" max="10" step="1" value="5">
+            <div class="form-group range-container">
+                <label for="valor_escala">Escala de Preferencia:</label>
+                <input type="range" id="valor_escala" name="valor_escala" min="0" max="10" step="1" value="5">
+            </div>
 
-            <h2>Aceptación de Términos y Condiciones</h2>
-            <input type="checkbox" id="terminos" name="terminos" required>
-            <label for="terminos">Acepto los términos y condiciones de reserva</label>
+            <div class="form-group checkbox-container">
+                <input type="checkbox" id="terminos" name="terminos" required>
+                <label for="terminos">Acepto los términos y condiciones de reserva</label>
+            </div>
 </div>
 
             <input type="submit" value="Enviar">
