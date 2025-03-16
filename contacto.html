@@ -69,7 +69,6 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("color_favorito").addEventListener("input", function() {
         colorDisplay.style.backgroundColor = this.value;
     });
-});
 </script>
     
     <style type="text/css">
@@ -160,47 +159,61 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         .color-picker-container {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espaciado entre el input de color y el cuadro RGB */
+    margin-bottom: 10px; /* Espacio debajo del selector de color */
+    flex-wrap: wrap; /* Permite que los elementos se acomoden mejor en pantallas pequeñas */
+}
 
-        .color-display {
-            width: 50px;
-            height: 30px;
-            border: 1px solid white;
-            background-color: #ff0000;
-        }
-        
-    /* Ajuste para evitar cortes en los labels */
-    .form-group {
-        margin-bottom: 15px;
-    }
+.color-display {
+    width: 25px;
+    height: 25px;
+    border: 1px solid #ccc;
+    display: inline-block;
+    background-color: red; /* Color predeterminado */
+}
 
-    .form-group label {
-        display: block;
-        margin-bottom: 5px;
-        font-weight: bold;
-    }
+#valor_escala {
+    width: 50%; /* Reduce el ancho al 50% */
+    display: block;
+    margin: 5px 0;
+}
 
-    /* Asegurar que el input de rango y su label se vean correctamente */
-    .range-container {
-        display: flex;
-        flex-direction: column;
-        align-items: start;
-        width: 100%;
-    }
+.range-container {
+    display: block; /* Obliga a estar en una nueva línea */
+    margin-top: 10px;
+    margin-bottom: 15px; /* Espacio antes del checkbox */
+}
 
-    .range-container input {
-        width: 100%;
-    }
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Alinea el contenido a la izquierda */
+    gap: 8px; /* Espacio entre el checkbox y el texto */
+}
 
-    /* Asegurar correcta alineación del checkbox y su label */
-    .checkbox-container {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-    }
+.checkbox-container label {
+    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+}
+
+.checkbox-container input[type="checkbox"] {
+    margin: 0;
+    width: 16px; /* Tamaño estándar del checkbox */
+    height: 16px;
+    position: relative;
+    left: 0; /* Asegura que no se desplace */
+}
+        .form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    margin-top: 15px;
+}
+
+
+
     </style>
 </head>
 <body>
@@ -269,15 +282,15 @@ document.addEventListener("DOMContentLoaded", function() {
                 <div class="color-picker-container">
                     <input type="color" id="color_favorito" name="color_favorito" value="#ff0000" oninput="document.getElementById('color_display').style.backgroundColor = this.value">
                  <div id="color_display" class="color-display"> </div>
-            
-            <div class="form-group range-container">
+                 
+            <div class="form-group range-container">   
                 <label for="valor_escala">Escala de Preferencia:</label>
                 <input type="range" id="valor_escala" name="valor_escala" min="0" max="10" step="1" value="5">
             </div>
 
             <div class="form-group checkbox-container">
-                <input type="checkbox" id="terminos" name="terminos" required>
                 <label for="terminos">Acepto los términos y condiciones de reserva</label>
+                <input type="checkbox" id="terminos" name="terminos" required>
             </div>
 </div>
 
