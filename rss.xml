@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+<channel>
+    <title>Restaurante Delicioso</title>
+    <link>https://restaurantedelicioso.com/</link>
+    <description>Descubre nuestros nuevos platos, promociones especiales y eventos gastronómicos</description>
+    
+    <item>
+        <title>Nuevo Plato: Pasta al Pesto</title>
+        <link>https://restaurantedelicioso.com/menu.html</link>
+        <description>Prueba nuestra nueva Pasta al Pesto, preparada con ingredientes frescos y un toque especial de la casa.</description>
+    </item>
+    
+    <item>
+        <title>Oferta Especial: 2x1 en Pizzas</title>
+        <link>https://restaurantedelicioso.com/promociones.html</link>
+        <description>¡Aprovecha nuestra promoción especial! Compra una pizza y llévate otra gratis. Válido solo los viernes.</description>
+    </item>
+    
+    <item>
+        <title>Evento: Cata de Vinos</title>
+        <link>https://restaurantedelicioso.com/eventos.html</link>
+        <description>Únete a nuestra exclusiva cata de vinos este sábado y descubre los mejores maridajes con nuestros platillos gourmet.</description>
+    </item>
+    
+    <item>
+        <title>Postre Destacado: Tarta de Chocolate</title>
+        <link>https://restaurantedelicioso.com/menu.html</link>
+        <description>Disfruta de nuestra deliciosa Tarta de Chocolate, el postre perfecto para los amantes del cacao.</description>
+    </item>
+    
+    <item>
+        <title>Nueva Bebida: Limonada de Mango</title>
+        <link>https://restaurantedelicioso.com/bebidas.html</link>
+        <description>Refrescante limonada de mango, ideal para acompañar cualquier plato y combatir el calor.</description>
+    </item>
+    
+    <item>
+        <title>Reserva tu Mesa Online</title>
+        <link>https://restaurantedelicioso.com/reservas.html</link>
+        <description>Haz tu reserva online en nuestro restaurante y asegura tu mesa sin complicaciones.</description>
+    </item>
+</channel>
+</rss>
