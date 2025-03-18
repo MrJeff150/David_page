@@ -1,3 +1,4 @@
+
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
@@ -7,70 +8,6 @@
     <title>Restaurante Gourmet</title>
     <link rel="shortcut icon" href="imagenes/favicon-16x16.png" type="image/png" />
 
-    <script>
-document.addEventListener("DOMContentLoaded", function() {
-    const formulario = document.querySelector("form");
-    const colorDisplay = document.getElementById("color_display");
-
-    formulario.addEventListener("submit", function(event) {
-        event.preventDefault(); // Evita el envío del formulario por defecto
-
-        let errores = [];
-        
-        // Validar Monto del Pago
-        let montoPago = document.getElementById("numero_pago").value;
-        if (montoPago <= 0) {
-            errores.push("El monto del pago debe ser mayor a 0.");
-        }
-
-        // Validar Método de Pago
-        let metodoPago = document.getElementById("metodo_pago").value;
-        if (!metodoPago) {
-            errores.push("Debe seleccionar un método de pago.");
-        }
-
-        // Validar Fecha y Hora de Pago
-        let fechaPago = document.getElementById("fecha_pago").value;
-        let horaPago = document.getElementById("hora_pago").value;
-        if (!fechaPago || !horaPago) {
-            errores.push("Debe seleccionar una fecha y hora de pago.");
-        }
-
-        // Validar URL de Transacción (si se proporciona)
-        let urlPago = document.getElementById("url_pago").value;
-        if (urlPago && !/^https?:\/\/.+/i.test(urlPago)) {
-            errores.push("La URL de la transacción debe ser válida.");
-        }
-
-        // Validar Teléfono
-        let telefono = document.getElementById("telefono").value;
-        if (!/^\d{9}$/.test(telefono)) {
-            errores.push("El teléfono debe tener 9 dígitos numéricos.");
-        }
-
-        // Validar Nombre Completo
-        let nombre = document.getElementById("nombre").value;
-        if (!/^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$/.test(nombre)) {
-            errores.push("El nombre solo puede contener letras y espacios.");
-        }
-
-        // Validar Plato
-        let plato = document.getElementById("plato").value.trim();
-        if (plato === "") {
-            errores.push("Debe ingresar un plato.");
-        }
-
-            alert("Formulario enviado con éxito.");
-            formulario.submit(); // Envía el formulario si no hay errores
-        }
-    });
-
-    // Cambia el color de fondo según la selección
-    document.getElementById("color_favorito").addEventListener("input", function() {
-        colorDisplay.style.backgroundColor = this.value;
-    });
-</script>
-    
     <style type="text/css">
         /* Estilo del fondo oscuro */
         body {
@@ -211,10 +148,95 @@ document.addEventListener("DOMContentLoaded", function() {
     width: 100%;
     margin-top: 15px;
 }
-
-
+#errmonto, #errnombre, #errterminos {
+    display: inline-block !important;
+    margin-left: 10px;
+    font-weight: bold;
+    color: green;
+    visibility: visible !important;
+    position: relative;
+}
 
     </style>
+
+<script>
+window.onload = function() {
+    const formulario = document.querySelector('form');
+    const btnEnviar = document.querySelector('.tick-button');
+    const formError = document.getElementById('formError');
+    
+    const campos = {
+        nombre: {
+            element: document.getElementById('nombre'),
+            regex: /^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$/,
+            error: "Este campo solo puede contener letras y espacios."
+        },
+        telefono: {
+            element: document.getElementById('telefono'),
+            regex: /^[0-9]{9}$/, 
+            error: "Este campo debe contener 9 dígitos numéricos."
+        },
+        email: {
+            element: document.getElementById('email'),
+            regex: /\S+@\S+\.\S+/, 
+            error: "El correo electrónico debe contener un '@' y un dominio válido."
+        },
+        numero_pago: {
+            element: document.getElementById('numero_pago'),
+            validate: (value) => parseFloat(value) > 0, 
+            error: "El monto debe ser mayor que 0."
+        },
+        plato: {
+            element: document.getElementById('plato'),
+            regex: /^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$/, 
+            error: "Este campo solo puede contener letras y espacios."
+        },
+        url_pago: {
+            element: document.getElementById('url_pago'),
+            regex: /^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([\/\w .-]*)*\/?$/, 
+            error: "Ingrese una URL válida que comience con 'http://' o 'https://'"
+        }
+    };
+
+    Object.keys(campos).forEach(key => {
+        const { element, regex, validate, error } = campos[key];
+        const errorElement = document.createElement('span');
+        errorElement.style.color = 'red';
+        element.insertAdjacentElement('afterend', errorElement);
+        
+        element.addEventListener('input', function() {
+            if (regex && !regex.test(element.value)) {
+                errorElement.textContent = error;
+            } else if (validate && !validate(element.value)) {
+                errorElement.textContent = error;
+            } else {
+                errorElement.textContent = '';
+            }
+            actualizarEstadoBoton();
+        });
+    });
+
+    formulario.addEventListener('submit', function(event) {
+        if (!formulario.checkValidity()) {
+            event.preventDefault();
+            formError.textContent = 'Por favor, corrige los errores antes de enviar el formulario.';
+        } else {
+            formError.textContent = '';
+        }
+    });
+
+    function actualizarEstadoBoton() {
+        const todosValidos = Object.keys(campos).every(key => {
+            const { element, regex, validate } = campos[key];
+            return (regex && regex.test(element.value)) || (validate && validate(element.value));
+        });
+        btnEnviar.disabled = !todosValidos;
+    }
+
+    actualizarEstadoBoton();
+};
+
+</script>
 </head>
 <body>
     <div class="header">
@@ -233,7 +255,7 @@ document.addEventListener("DOMContentLoaded", function() {
         <form action="/submit" method="POST" enctype="multipart/form-data">
                 <h2>Detalles de Pago</h2>
             <label for="numero_pago">Monto del Pago:</label>
-            <input type="number" id="numero_pago" name="numero_pago" required min="0" step="100" placeholder="Monto en USD">
+            <input type="number" id="numero_pago" name="numero_pago" placeholder="Monto en USD">
             <label for="metodo_pago">Método de Pago:</label>
             <select id="metodo_pago" name="metodo_pago" required>
                 <option value="" disabled selected>Selecciona un método</option>
