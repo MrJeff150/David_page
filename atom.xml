@@ -1,43 +1,38 @@
-<?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <title>Recetas y Tips de Cocina</title>
-    <link href="https://cocinadelicias.com/"/>
-    <updated>2025-03-18T00:00:00Z</updated>
-    <id>https://cocinadelicias.com/</id>
-    <author>
-        <name>Cocina Delicias</name>
-    </author>
-    <subtitle>Las mejores recetas y consejos gastronómicos para sorprender en la cocina</subtitle>
-
-    <entry>
-        <title>Receta: Paella Valenciana</title>
-        <link href="https://cocinadelicias.com/recetas/paella-valenciana"/>
-        <id>https://cocinadelicias.com/recetas/paella-valenciana</id>
-        <updated>2025-03-18T00:00:00Z</updated>
-        <summary>Aprende a preparar una auténtica Paella Valenciana con ingredientes tradicionales y pasos detallados.</summary>
-    </entry>
-
-    <entry>
-        <title>Consejos para una Masa de Pizza Perfecta</title>
-        <link href="https://cocinadelicias.com/tips/masa-pizza-perfecta"/>
-        <id>https://cocinadelicias.com/tips/masa-pizza-perfecta</id>
-        <updated>2025-03-18T00:00:00Z</updated>
-        <summary>Descubre los secretos para obtener una masa de pizza crujiente por fuera y esponjosa por dentro.</summary>
-    </entry>
-
-    <entry>
-        <title>Receta: Tarta de Queso Casera</title>
-        <link href="https://cocinadelicias.com/recetas/tarta-queso"/>
-        <id>https://cocinadelicias.com/recetas/tarta-queso</id>
-        <updated>2025-03-18T00:00:00Z</updated>
-        <summary>Prepara una deliciosa tarta de queso con esta receta fácil y rápida, ideal para cualquier ocasión.</summary>
-    </entry>
-
-    <entry>
-        <title>Trucos para una Cocción Perfecta del Arroz</title>
-        <link href="https://cocinadelicias.com/tips/arroz-perfecto"/>
-        <id>https://cocinadelicias.com/tips/arroz-perfecto</id>
-        <updated>2025-03-18T00:00:00Z</updated>
-        <summary>Evita que el arroz se pase o quede crudo con estos consejos infalibles para cocinarlo a la perfección.</summary>
-    </entry>
+<title>Menú y Novedades del Restaurante</title>
+<link href="https://mrjeff150.github.io/David_page/"/>
+<updated>2025-03-18T00:00:00Z</updated>
+<id>https://mrjeff150.github.io/David_page/</id>
+<author>
+<name>Restaurante Gourmet</name>
+</author>
+<subtitle>Descubre nuestras especialidades y últimas novedades culinarias</subtitle>
+<entry>
+<title>Plato Especial: Paella Valenciana</title>
+<link href="https://mrjeff150.github.io/David_page/menu/paella-valenciana"/>
+<id>https://mrjeff150.github.io/David_page/menu/paella-valenciana</id>
+<updated>2025-03-18T00:00:00Z</updated>
+<summary>Disfruta de nuestra auténtica Paella Valenciana, preparada con ingredientes frescos y receta tradicional.</summary>
+</entry>
+<entry>
+<title>Consejos del Chef: Masa de Pizza Perfecta</title>
+<link href="https://mrjeff150.github.io/David_page/blog/masa-pizza-perfecta"/>
+<id>https://mrjeff150.github.io/David_page/blog/masa-pizza-perfecta</id>
+<updated>2025-03-18T00:00:00Z</updated>
+<summary>Nuestro chef comparte sus secretos para una masa de pizza crujiente por fuera y esponjosa por dentro.</summary>
+</entry>
+<entry>
+<title>Postre Destacado: Tarta de Queso Casera</title>
+<link href="https://mrjeff150.github.io/David_page/menu/tarta-queso"/>
+<id>https://mrjeff150.github.io/David_page/menu/tarta-queso</id>
+<updated>2025-03-18T00:00:00Z</updated>
+<summary>Prueba nuestra exquisita tarta de queso, elaborada con una receta casera y el mejor queso cremoso.</summary>
+</entry>
+<entry>
+<title>Tips del Chef: Cocción Perfecta del Arroz</title>
+<link href="https://mrjeff150.github.io/David_page/blog/arroz-perfecto"/>
+<id>https://mrjeff150.github.io/David_page/blog/arroz-perfecto</id>
+<updated>2025-03-18T00:00:00Z</updated>
+<summary>Aprende con nuestro chef a cocinar arroz en su punto ideal, sin que se pase o quede crudo.</summary>
+</entry>
 </feed>
